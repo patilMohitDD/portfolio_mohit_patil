@@ -1,47 +1,18 @@
 import os.path
-import random 
 import pyperclip 
 from tkinter import *
 from tkinter.ttk import *
-
-# Function for calculation of password 
-def low(): 
-	entry.delete(0, END) 
-
-	# Get the length of passowrd 
-	length = var1.get() 
-
-	lower = "abcdefghijklmnopqrstuvwxyz"
-	upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-	digits = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 !@#$%^&*()"
-	password = "" 
-
-
-	if var.get() == 1: # Low strength
-		for i in range(0, length): password = password + random.choice(lower) 
-		return password 
-
-	elif var.get() == 0: # Medium srength
-		for i in range(0, length): password = password + random.choice(upper) 
-		return password 
-
-	# if strength selected is strong 
-	elif var.get() == 3: # High strength
-		for i in range(0, length): password = password + random.choice(digits) 
-		return password
-	else: 
-		print("Wrong option selected")
-
+from generation import low
 
 
 def generate(): # generate Password, calling the function
-	entry.insert(10, low()) 
+	entry.insert(10, low(entry, var1, var)) 
 
 # Function for copying password to clipboard 
 def copy1(): 
 	pyperclip.copy(entry.get() ) 
 
-# if file is created ir not
+# if file is created or not
 def checkExistence():
     if os.path.exists("info.txt"):
         pass
@@ -50,7 +21,7 @@ def checkExistence():
         file.close()
 
 # appending the credentails to the file as txt format
-def appendNew():
+def write():
 	file = open("info.txt", 'a')
 	userName = entry1.get() 
 	website= entry2.get()
@@ -141,7 +112,7 @@ entry = Entry(root)
 entry.grid(row=4, column=1) 
 
 
-save_button = Button(root, text="Save", command=appendNew) 
+save_button = Button(root, text="Save", command = write()) 
 save_button.grid(row=2, column=2) 
 show_button = Button(root, text="Show all passwords", command=readPasswords) 
 show_button.grid(row=2, column=3) 
