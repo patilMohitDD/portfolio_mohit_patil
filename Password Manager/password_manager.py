@@ -1,6 +1,4 @@
 import os.path
-# Python program to generate random 
-# password using Tkinter module 
 import random 
 import pyperclip 
 from tkinter import *
@@ -18,40 +16,32 @@ def low():
 	digits = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 !@#$%^&*()"
 	password = "" 
 
-	# if strength selected is low 
-	if var.get() == 1: 
-		for i in range(0, length): 
-			password = password + random.choice(lower) 
+
+	if var.get() == 1: # Low strength
+		for i in range(0, length): password = password + random.choice(lower) 
 		return password 
 
-	# if strength selected is medium 
-	elif var.get() == 0: 
-		for i in range(0, length): 
-			password = password + random.choice(upper) 
+	elif var.get() == 0: # Medium srength
+		for i in range(0, length): password = password + random.choice(upper) 
 		return password 
 
 	# if strength selected is strong 
-	elif var.get() == 3: 
-		for i in range(0, length): 
-			password = password + random.choice(digits) 
-		return password 
+	elif var.get() == 3: # High strength
+		for i in range(0, length): password = password + random.choice(digits) 
+		return password
 	else: 
-		print("Please choose an option") 
+		print("Wrong option selected")
 
 
-# Function for generation of password 
-def generate(): 
-	password1 = low() 
-	entry.insert(10, password1) 
 
+def generate(): # generate Password, calling the function
+	entry.insert(10, low()) 
 
 # Function for copying password to clipboard 
 def copy1(): 
-	random_password = entry.get() 
-	pyperclip.copy(random_password) 
+	pyperclip.copy(entry.get() ) 
 
-
-
+# if file is created ir not
 def checkExistence():
     if os.path.exists("info.txt"):
         pass
@@ -59,6 +49,7 @@ def checkExistence():
         file = open("info.txt", 'w')
         file.close()
 
+# appending the credentails to the file as txt format
 def appendNew():
 	file = open("info.txt", 'a')
 	userName = entry1.get() 
