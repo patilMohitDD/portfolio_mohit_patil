@@ -1,0 +1,36 @@
+-----------------------
+City -> Long Beach
+Country -> US
+Weather -> Clear
+Humidity -> 49
+Temperature ->288.3
+Visibility -> 10000
+Wind Speed-> 10.29
+-----------------------
+-----------------------
+City -> kalyan
+Country -> IN
+Weather -> Clear
+Humidity -> 58
+Temperature ->299.12
+Visibility -> 10000
+Wind Speed-> 0.78
+-----------------------
+-----------------------
+City -> Los angeles
+Country -> US
+Weather -> Clear
+Humidity -> 39
+Temperature ->288.69
+Visibility -> 10000
+Wind Speed-> 9.77
+-----------------------
+-----------------------
+City -> Ambernath
+Country -> IN
+Weather -> Clear
+Humidity -> 59
+Temperature ->299.03
+Visibility -> 10000
+Wind Speed-> 1.1
+-----------------------
