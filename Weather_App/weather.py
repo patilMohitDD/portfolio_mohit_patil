@@ -13,7 +13,6 @@ def weather():
     valid_City = requests.get(f'https://www.geonames.org/search.html?q={City}&country=')
 
     if valid_City.status_code == 200:
-        api_Key ="d2b822ee93ccdd3a81b6c27d5da1a66a"
         weather_Data = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={City}&units-imperial&APPID={os.getenv('api_Key')}")
         weather_Data = weather_Data.json()
 
