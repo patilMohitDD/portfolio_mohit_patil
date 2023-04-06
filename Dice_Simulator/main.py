@@ -12,7 +12,7 @@ while 1:
         secho("\nDice face is :-", fg="red", bold=True, blink=True)
         face = choice(dice_Data)
         secho(face,fg="yellow", bold=True)
-        for i in dice_simulation[face]: secho(i,fg="yellow", bold=True)
+        for i in dice_simulation[face]: secho(i,fg="green", bold=True)
     if play.lower() == "n":
         secho("\nDice Simulation in ended", fg="red", bold=True, blink=True)
         break
