@@ -1,0 +1,97 @@
+mohitpatil@MacBook-Pro-3 Hang Man Game % python3 main.py
+
+Word to Guessed :-  _  _  _  _  _  _  _  _  _ 
+Alphabets Used:-  
+Enter the Alphabet to be Guessed:- q
+
+Word to Guessed :-  _  _  _  _  _  _  _  _  _ 
+Alphabets Used:-  Q
+Enter the Alphabet to be Guessed:- a
+
+Word to Guessed :-  _  _  _  _  A _  _  _  _ 
+Alphabets Used:-  Q A
+Enter the Alphabet to be Guessed:- w
+
+Word to Guessed :-  _  _  _  _  A _  _  _  _ 
+Alphabets Used:-  Q A W
+Enter the Alphabet to be Guessed:- s
+
+Word to Guessed :-  _  _  S _  A _  _  _  _ 
+Alphabets Used:-  S Q A W
+Enter the Alphabet to be Guessed:- e
+
+Word to Guessed :-  _  _  S _  A _  _  _  _ 
+Alphabets Used:-  E Q A W S
+Enter the Alphabet to be Guessed:- d
+
+Word to Guessed :-  _  _  S _  A _  _  _  _ 
+Alphabets Used:-  E Q A W S D
+Enter the Alphabet to be Guessed:- r
+
+Word to Guessed :-  _  _  S _  A _  _  _  _ 
+Alphabets Used:-  E Q A R W S D
+Enter the Alphabet to be Guessed:- f
+
+Word to Guessed :-  _  _  S _  A _  _  _  _ 
+Alphabets Used:-  F E Q A R W S D
+Enter the Alphabet to be Guessed:- t
+
+Word to Guessed :-  _  _  S T A _  _  _  _ 
+Alphabets Used:-  F E Q A R W S T D
+Enter the Alphabet to be Guessed:- g
+
+Word to Guessed :-  _  _  S T A _  _  _  _ 
+Alphabets Used:-  F E Q A R W S T G D
+Enter the Alphabet to be Guessed:- y
+
+Word to Guessed :-  _  _  S T A _  _  _  _ 
+Alphabets Used:-  F E Q A R Y W S T G D
+Enter the Alphabet to be Guessed:- h
+
+Word to Guessed :-  _  _  S T A _  H _  _ 
+Alphabets Used:-  F H E Q A R Y W S T G D
+Enter the Alphabet to be Guessed:- u
+
+Word to Guessed :-  _  _  S T A _  H _  _ 
+Alphabets Used:-  F H E Q A R Y W S T G U D
+Enter the Alphabet to be Guessed:- j
+
+Word to Guessed :-  _  _  S T A _  H _  _ 
+Alphabets Used:-  F H E Q A R J Y W S T G U D
+Enter the Alphabet to be Guessed:- i
+
+Word to Guessed :-  _  I S T A _  H I _ 
+Alphabets Used:-  F H E Q A R J Y I W S T G U D
+Enter the Alphabet to be Guessed:- k
+
+Word to Guessed :-  _  I S T A _  H I _ 
+Alphabets Used:-  F K H E Q A R J Y I W S T G U D
+Enter the Alphabet to be Guessed:- o
+
+Word to Guessed :-  _  I S T A _  H I O
+Alphabets Used:-  O F K H E Q A R J Y I W S T G U D
+Enter the Alphabet to be Guessed:- l
+
+Word to Guessed :-  _  I S T A _  H I O
+Alphabets Used:-  O F K L H E Q A R J Y I W S T G U D
+Enter the Alphabet to be Guessed:- p
+
+Word to Guessed :-  P I S T A _  H I O
+Alphabets Used:-  O F L Q J Y W P A R I T D H G K E S U
+Enter the Alphabet to be Guessed:- b
+
+Word to Guessed :-  P I S T A _  H I O
+Alphabets Used:-  O F L Q J Y W B P A R I T D H G K E S U
+Enter the Alphabet to be Guessed:- z
+
+Word to Guessed :-  P I S T A _  H I O
+Alphabets Used:-  O F L Z Q J Y W B P A R I T D H G K E S U
+Enter the Alphabet to be Guessed:- x
+
+Word to Guessed :-  P I S T A _  H I O
+Alphabets Used:-  O F L Z Q J Y W B P A R I T D H G K E X S U
+Enter the Alphabet to be Guessed:- c
+
+Hurray!!!! You gussed the correct Word
+PISTACHIO
+mohitpatil@MacBook-Pro-3 Hang Man Game % 
