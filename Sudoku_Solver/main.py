@@ -1,21 +1,30 @@
 from fastapi import FastAPI, Path
 from typing import Optional
 from store import sudokus
-from fastapi.responses import JSONResponse
-import json
-from pprint import pprint
+from models import SudokuMatrix
+
 
 app = FastAPI()
 
 @app.get("/get_sudokus")
-async def get_sudoku(id:Optional[int] = None , description="This will a give all the Sudokus we have to solve with there ID's"):
-    return json.dumps(sudokus)
-    # response = JSONResponse(content=sudokus) # beautfiying the response and sending
-    # return response
+async def get_sudoku():
+    return sudokus
 
 @app.get(("/get_sudoku_by_id/{id}"))
-async def get_sudoku_by_id(id:int = Path(gt=0)): # id should be greater than 0
-    response = sudokus.get(id)
-    return {id: response}
+async def get_sudoku_by_id(id:int = Path(gt=0)):
+    if id not in sudokus:
+        return {"Mssg" : "No Sudoku present"}
+    return sudokus.get(id)
+
+@app.post("/sudoku_solver")
+async def sudoku_solver(matrix:SudokuMatrix, id:int):
+    if id in sudokus:
+        return {"mssg": "ID existing"}
+    
+    sudokus[id] = matrix
+    return {
+        "mssg":f"{id} Stored successfully"
+    }
+
 
 
