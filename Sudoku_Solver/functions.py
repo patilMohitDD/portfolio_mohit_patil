@@ -1,3 +1,7 @@
+from random import randint
+from constants import sudokus
+
+
 def solver(board):
     n = 9
     def isValid(row, col, ch, board):
@@ -15,24 +19,30 @@ def solver(board):
         
         return True
         
-    def solve(row, col, board):
+    def backtracking(row, col, board):
         if row == n:
             return True
         if col == n:
-            return solve(row+1, 0, board)
+            return backtracking(row+1, 0, board)
         
         if board[row][col] == ".":
             for i in range(1, 10):
                 if isValid(row, col, str(i), board):
                     board[row][col] = str(i)
                     
-                    if solve(row, col + 1, board):
+                    if backtracking(row, col + 1, board):
                         return True
                     else:
                         board[row][col] = "."
             return False
         else:
-            return solve(row, col + 1, board)
+            return backtracking(row, col + 1, board)
         
-    solve(0, 0, board)
+    backtracking(0, 0, board)
     return board
+
+def generate_id():
+    while True:
+        id = randint(1, 100)
+        if id not in db.keys():
+            return str(id)

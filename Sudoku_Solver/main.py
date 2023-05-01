@@ -1,41 +1,55 @@
-from fastapi import FastAPI, Path
+from fastapi import FastAPI, Path, Request
 from typing import Optional
-from constants import sudokus
 from models import SudokuMatrix
-from functions import solver
-from json import dumps
+from functions import solver, generate_id
+from json import dumps, loads, dump
+
+# This is your main storage
+db = {}
+with open('db.json') as f:
+    db = loads(f.read())
 
 
 app = FastAPI()
 
 @app.get("/get_sudokus")
 async def get_sudoku():
-    return sudokus
+    return db
 
 @app.get("/get_sudoku_by_id/{id}")
 async def get_sudoku_by_id(id:int = Path(gt=0)):
-    if id not in sudokus:
+    if str(id) not in db:
         return {"Mssg" : "No Sudoku present"}
-    return sudokus.get(id)
+
+    return db.get(str(id))
 
 @app.get("/solve_sudoku_by_id/{id}")
 async def solve_sudoku_by_id(id: int = Path(gt=0)):
-    if id not in sudokus:
+    if str(id) not in db:
         return {"Mssg" : "No Sudoku present"}
 
-    response = solver(sudokus[id])
+    response = solver(db[str(id)])
     return response
-    
 
-@app.post("/sudoku_solver")
-async def sudoku_solver(matrix:SudokuMatrix, id:int):
-    if id in sudokus:
-        return {"mssg": "ID existing"}
-    
-    sudokus[id] = matrix
+@app.post("/input_sudoku/")# matrix: SudokuMatrix
+async def input_sudoku(matrix: SudokuMatrix, request:Request):
+    #generate ID for matrix
+    id = generate_id()
+
+    matrix = await (request.json())
+    # print(matrix["matrix"])
+
+    # Populating new matirx into DB
+    db[id] = matrix["matrix"]
+
+    with open('db.json', 'w') as f:
+        dump(db, f)
+
     return {
-        "mssg":f"{id} Stored successfully"
+        "id": int(id),
+        "mssg": "Stored Successfully"
     }
+
 
 
 
