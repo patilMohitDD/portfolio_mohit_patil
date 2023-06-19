@@ -3,6 +3,10 @@ from typing import Optional
 from models import SudokuMatrix
 from functions import solver, generate_id
 from json import dumps, loads, dump
+import logging
+
+logger = logging.getLogger()
+
 
 # This is your main storage
 db = {}
@@ -49,6 +53,7 @@ async def input_sudoku(matrix: SudokuMatrix, request:Request):
         "id": int(id),
         "mssg": "Stored Successfully"
     }
+
 
 
 
